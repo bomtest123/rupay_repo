@@ -1,32 +1,33 @@
 pipeline {
     agent any 
     stages {
-        stage('Static Analysis') {
+        stage('STEP1') {
             steps {
                 echo 'Run the static analysis to the code' 
+                sh "pm2 1"
             }
         }
-        stage('Compile') {
+        stage('STEP2') {
             steps {
                 echo 'Compile the source code' 
             }
         }
-        stage('Security Check') {
+        stage('STEP3') {
             steps {
                 echo 'Run the security check against the application' 
             }
         }
-        stage('Run Unit Tests') {
+        stage('STEP4') {
             steps {
                 echo 'Run unit tests from the source code' 
             }
         }
-        stage('Run Integration Tests') {
+        stage('STEP5') {
             steps {
                 echo 'Run only crucial integration tests from the source code' 
             }
         }
-        stage('Publish Artifacts') {
+        stage('STEP6') {
             steps {
                 echo 'Save the assemblies generated from the compilation' 
             }
