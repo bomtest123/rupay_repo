@@ -1,6 +1,14 @@
 pipeline {
     agent any 
+    tools  { nodejs "nodejs" }
     stages {
+        stage('Test npm') {
+            steps {
+                sh """
+                npm --version
+                """
+            }
+        }
         stage('STEP1') {
             steps {
                 echo 'Run the static analysis to the code' 
