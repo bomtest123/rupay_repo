@@ -12,7 +12,6 @@ pipeline {
         stage('STEP1') {
             steps {
                 echo 'Run the static analysis to the code' 
-                sh "pm2 1"
             }
         }
         stage('STEP2') {
